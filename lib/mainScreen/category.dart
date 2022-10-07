@@ -1,5 +1,4 @@
-
-
+import 'package:bottomnavigation/categories/men_categ.dart';
 import 'package:bottomnavigation/widgets/fake_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,15 +11,41 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
+  // List of items for sideNavigationBar
+  List<ItemsData> items = [
+    ItemsData(label: 'Men'),
+    ItemsData(label: 'Women'),
+    ItemsData(label: 'Kids'),
+    ItemsData(label: 'Home & Garden'),
+    ItemsData(label: 'Electronics'),
+    ItemsData(label: ' Accessories'),
+    ItemsData(label: 'Beauty'),
+    ItemsData(label: 'Kitchen'),
+  ];
+
+  final PageController _pageController = PageController();
+
+  @override
+  void initState() {
+    for (var elements in items) {
+      elements.isSelected = false;
+    }
+    setState(() {
+      items[0].isSelected = true;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Colors.white,
             statusBarIconBrightness: Brightness.dark),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey.shade900,
         elevation: 0,
         toolbarHeight: 80,
 
@@ -34,13 +59,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
             left: 0,
             child: sideNavigation(size),
           ),
-          Positioned(bottom: 0, right: 0, child: categoryView(size))
+          Positioned(
+              bottom: 0,
+              right: 0,
+              child: categoryView(size))
         ],
       ),
     );
   }
 
-//  Create Side NavigationBar Widget function
+  //  Create Side NavigationBar Widget function
 
   Widget sideNavigation(Size size) {
     return SizedBox(
@@ -50,15 +78,18 @@ class _CategoryScreenState extends State<CategoryScreen> {
           itemCount: items.length,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: (){
-                // Here for keyword used for same color of  unselected Container
-                for (var element in items){
-                  element.isSelected = false;
-                }
-                // Here setState  used for different color of  selected Container
-                setState(() {
-                  items[index].isSelected = true;
-                });
+              onTap: () {
+                _pageController.animateToPage(index,
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.bounceIn);
+                // // Here for keyword used for same color of  unselected Container
+                // for (var element in items){
+                //   element.isSelected = false;
+                // }
+                // // Here setState  used for different color of  selected Container
+                // setState(() {
+                //   items[index].isSelected = true;
+                // });
               },
               child: Container(
                   color: items[index].isSelected == true
@@ -77,22 +108,61 @@ class _CategoryScreenState extends State<CategoryScreen> {
       height: size.height * 0.8,
       width: size.width * 0.8,
       color: Colors.white,
+      child: Center(
+          child: PageView(
+        scrollDirection: Axis.vertical,
+        controller: _pageController,
+        onPageChanged: (value) {
+          for (var element in items) {
+            element.isSelected = false;
+          }
+          // Here setState  used for different color of  selected Container
+          setState(() {
+            items[value].isSelected = true;
+          });
+        },
+        children: const [
+          MenCategory(),
+          Center(
+              child: Text(
+            'Women Category',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Kids Category',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Home & Garden',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Electronics',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Accessories',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Beauty',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Kitchen',
+            style: TextStyle(fontSize: 30),
+          )),
+        ],
+      )),
     );
   }
 }
-
-// List of items for sideNavigationBar
-List<ItemsData> items = [
-  ItemsData(label: 'Men'),
-  ItemsData(label: 'Women'),
-  ItemsData(label: 'Kids'),
-  ItemsData(label: 'Home & Garden'),
-  ItemsData(label: 'Electronics'),
-  ItemsData(label: ' Accessories'),
-  ItemsData(label: 'Beauty'),
-  ItemsData(label: 'Beauty'),
-  ItemsData(label: 'Beauty'),
-];
 
 //Custom Widget
 class ItemsData {

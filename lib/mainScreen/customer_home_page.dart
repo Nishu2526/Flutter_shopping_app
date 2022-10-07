@@ -1,6 +1,9 @@
 import 'package:bottomnavigation/mainScreen/category.dart';
 import 'package:bottomnavigation/mainScreen/home.dart';
 import 'package:flutter/material.dart';
+import 'cart.dart';
+
+
 class CustomerHomePage extends StatefulWidget {
   const CustomerHomePage({Key? key, required String title}) : super(key: key);
 
@@ -15,7 +18,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   final List<Widget> _tabs = const [
     HomeScreen(),
     CategoryScreen(),
-    Center(child: Text('MyOder Screen')),
+    Center(child: Text('My Order Screen')),
     Center(child: Text('My Cart Screen')),
     Center(child: Text('Account Screen')),
   ];
