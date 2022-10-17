@@ -1,15 +1,15 @@
-List <String> mainCategory = [
+List<String> mainCategory = [
   'Men',
   'Women',
   'Kids',
   'Accessories',
   'Electronics',
   'Home & Garden'
-  'Beauty',
+      'Beauty',
   'Kitchen'
 ];
 
-List <String> men = [
+List<String> men = [
   'Shirt',
   'Jeans',
   'T-shirt',
@@ -20,15 +20,28 @@ List <String> men = [
   'Others',
 ];
 
-List <String> women = [
+List<String> women = [
   'Sari',
   'Top & T-shirt',
-  'Kurtis'
+  'Kurtis',
   'Palazzo',
   'Western Dress',
   'Jeans',
   'Lanhga',
   'Shoes',
   'Bags',
-  'Shots'
+  'Shorts'
+];
+
+List<String> electronic = [
+  'laptop',
+  'headphone',
+  'mobile cover',
+  'keyboard',
+  'earbirds',
+  'watch',
+  'mouse',
+  'videogame',
+  'dslr',
+  'usb cable',
 ];

@@ -1,4 +1,6 @@
+import 'package:bottomnavigation/categories/elecronics_categ.dart';
 import 'package:bottomnavigation/categories/men_categ.dart';
+import 'package:bottomnavigation/categories/women_categ.dart';
 import 'package:bottomnavigation/widgets/fake_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -40,12 +42,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Colors.white,
             statusBarIconBrightness: Brightness.dark),
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: Colors.white,
         elevation: 0,
         toolbarHeight: 80,
 
@@ -59,10 +60,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             left: 0,
             child: sideNavigation(size),
           ),
-          Positioned(
-              bottom: 0,
-              right: 0,
-              child: categoryView(size))
+          Positioned(bottom: 0, right: 0, child: categoryView(size))
         ],
       ),
     );
@@ -80,7 +78,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             return GestureDetector(
               onTap: () {
                 _pageController.animateToPage(index,
-                    duration: const Duration(milliseconds: 400),
+                    duration: const Duration(milliseconds: 100),
                     curve: Curves.bounceIn);
                 // // Here for keyword used for same color of  unselected Container
                 // for (var element in items){
@@ -123,11 +121,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         },
         children: const [
           MenCategory(),
-          Center(
-              child: Text(
-            'Women Category',
-            style: TextStyle(fontSize: 30),
-          )),
+          WomenCategory(),
           Center(
               child: Text(
             'Kids Category',
@@ -138,11 +132,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             'Home & Garden',
             style: TextStyle(fontSize: 30),
           )),
-          Center(
-              child: Text(
-            'Electronics',
-            style: TextStyle(fontSize: 30),
-          )),
+          ElectronicCategory(),
           Center(
               child: Text(
             'Accessories',

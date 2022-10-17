@@ -1,7 +1,7 @@
 import 'package:bottomnavigation/mainScreen/category.dart';
 import 'package:bottomnavigation/mainScreen/home.dart';
 import 'package:flutter/material.dart';
-import 'cart.dart';
+
 
 
 class CustomerHomePage extends StatefulWidget {

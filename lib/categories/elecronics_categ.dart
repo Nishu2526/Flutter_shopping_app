@@ -1,11 +1,9 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 import 'package:bottomnavigation/utilies/cate_list.dart';
 import '../mainor_screen/subcate_products.dart';
 
-class MenCategory extends StatelessWidget {
-  const MenCategory({Key? key}) : super(key: key);
+class ElectronicCategory extends StatelessWidget {
+  const ElectronicCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class MenCategory extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const CategoryHeaderLevel(
-                    HeaderLabel: 'Men',
+                    headerLabel: 'Electronics',
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.68,
@@ -31,12 +29,12 @@ class MenCategory extends StatelessWidget {
                         crossAxisCount: 3,
                         mainAxisSpacing: 40,
                         // crossAxisSpacing: 20,
-                        children: List.generate(men.length, (index) {
+                        children: List.generate(electronic.length, (index) {
                           return SubcategoryLabel(
-                            mainCategoryName: 'men',
-                            subCategoryName: men[index],
-                            assetName: 'images/men/men$index.jpg',
-                            subCategorylabel: men[index],
+                            mainCategoryName: 'electronic',
+                            subCategoryName: electronic[index],
+                            assetName: 'images/electronic/electronic$index.jpg',
+                            subCategorylabel: electronic[index],
                           );
                         })),
                   ),
@@ -51,7 +49,7 @@ class MenCategory extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.8,
                 width: MediaQuery.of(context).size.width * 0.05,
                 child: const MenSlider(
-                  mainCategoryName: 'men',
+                  mainCategoryName: 'electronic',
                 ),
               ))
         ],
@@ -139,8 +137,8 @@ class SubcategoryLabel extends StatelessWidget {
 
 //
 class CategoryHeaderLevel extends StatelessWidget {
-  final String HeaderLabel;
-  const CategoryHeaderLevel({Key? key, required this.HeaderLabel})
+  final String headerLabel;
+  const CategoryHeaderLevel({Key? key, required this.headerLabel})
       : super(key: key);
 
   @override
@@ -148,7 +146,7 @@ class CategoryHeaderLevel extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(30),
       child: Text(
-        HeaderLabel,
+        headerLabel,
         style: const TextStyle(
             fontSize: 25, fontWeight: FontWeight.bold, letterSpacing: 2),
       ),

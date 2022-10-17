@@ -34,7 +34,7 @@ class SubCategoryScreen extends StatelessWidget {
       body: Center(
         child: Text(
           mainCategName,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
         ),
       ),
     );

@@ -8,8 +8,9 @@ class FakeSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchScreen()));
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const SearchScreen()));
       },
       child: Container(
         height: 50,
@@ -31,7 +32,8 @@ class FakeSearch extends StatelessWidget {
                 ),
                 Text(
                   'What are you looking for?',
-                  style: TextStyle(fontSize: 20, color: Colors.grey, letterSpacing: 1),
+                  style: TextStyle(
+                      fontSize: 20, color: Colors.grey, letterSpacing: 1),
                 ),
               ],
             ),
@@ -39,7 +41,8 @@ class FakeSearch extends StatelessWidget {
               width: 100,
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.yellow, borderRadius: BorderRadius.circular(50),
+                color: Colors.yellow,
+                borderRadius: BorderRadius.circular(50),
               ),
               child: const Center(
                 child: Text(
