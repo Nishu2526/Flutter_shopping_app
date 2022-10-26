@@ -123,7 +123,7 @@ class SubcategoryLabel extends StatelessWidget {
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Container(
-            color: Colors.grey.shade400,
+            // color: Colors.grey.shade400,
             height: 100,
             width: 100,
             child: Image(
