@@ -1,3 +1,4 @@
+import 'package:bottomnavigation/categories/beauty_categ.dart';
 import 'package:bottomnavigation/categories/elecronics_categ.dart';
 import 'package:bottomnavigation/categories/men_categ.dart';
 import 'package:bottomnavigation/categories/women_categ.dart';
@@ -17,12 +18,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
   List<ItemsData> items = [
     ItemsData(label: 'Men'),
     ItemsData(label: 'Women'),
-    ItemsData(label: 'Kids'),
-    ItemsData(label: 'Home & Garden'),
+    // ItemsData(label: 'Kids'),
+    // ItemsData(label: 'Home & Garden'),
     ItemsData(label: 'Electronics'),
-    ItemsData(label: ' Accessories'),
+    // ItemsData(label: ' Accessories'),
     ItemsData(label: 'Beauty'),
-    ItemsData(label: 'Kitchen'),
+    // ItemsData(label: 'Kitchen'),
   ];
 
   final PageController _pageController = PageController();
@@ -122,32 +123,28 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: const [
           MenCategory(),
           WomenCategory(),
-          Center(
-              child: Text(
-            'Kids Category',
-            style: TextStyle(fontSize: 30),
-          )),
-          Center(
-              child: Text(
-            'Home & Garden',
-            style: TextStyle(fontSize: 30),
-          )),
-          ElectronicCategory(),
-          Center(
-              child: Text(
-            'Accessories',
-            style: TextStyle(fontSize: 30),
-          )),
-          Center(
-              child: Text(
-            'Beauty',
-            style: TextStyle(fontSize: 30),
-          )),
-          Center(
-              child: Text(
-            'Kitchen',
-            style: TextStyle(fontSize: 30),
-          )),
+          // Center(
+          //     child: Text(
+          //   'Kids Category',
+          //   style: TextStyle(fontSize: 30),
+          // )),
+          // Center(
+          //     child: Text(
+          //   'Home & Garden',
+          //   style: TextStyle(fontSize: 30),
+          // )),
+           ElectronicCategory(),
+          // Center(
+          //     child: Text(
+          //   'Accessories',
+          //   style: TextStyle(fontSize: 30),
+          // )),
+          BeautyCategory(),
+          // Center(
+          //     child: Text(
+          //   'Kitchen',
+          //   style: TextStyle(fontSize: 30),
+          // )),
         ],
       )),
     );

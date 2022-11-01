@@ -2,8 +2,9 @@ import 'package:bottomnavigation/widgets/categ_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:bottomnavigation/utilies/cate_list.dart';
 
-class WomenCategory extends StatelessWidget {
-  const WomenCategory({Key? key}) : super(key: key);
+
+class BeautyCategory extends StatelessWidget {
+  const BeautyCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class WomenCategory extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const CategoryHeaderLevel(
-                    headerLabel: 'Women',
+                    headerLabel: 'Beauty',
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.68,
@@ -29,12 +30,12 @@ class WomenCategory extends StatelessWidget {
                         crossAxisCount: 3,
                         mainAxisSpacing: 40,
                         // crossAxisSpacing: 20,
-                        children: List.generate(women.length, (index) {
+                        children: List.generate(beauty.length, (index) {
                           return SubcategoryModal(
-                            mainCategoryName: 'women',
-                            subCategoryName: women[index],
-                            assetName: 'images/women/women$index.jpg',
-                            subCategorylabel: women[index],
+                            mainCategoryName: 'beauty',
+                            subCategoryName: beauty[index],
+                            assetName: 'images/beauty/beauty$index.jpg',
+                            subCategorylabel: beauty[index],
                           );
                         })),
                   ),
@@ -49,7 +50,7 @@ class WomenCategory extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.8,
                 width: MediaQuery.of(context).size.width * 0.05,
                 child: const SliderBar(
-                  mainCategoryName: 'women',
+                  mainCategoryName: 'beauty',
                 ),
               ))
         ],

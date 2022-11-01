@@ -4,8 +4,8 @@ List<String> mainCategory = [
   'Kids',
   'Accessories',
   'Electronics',
-  'Home & Garden'
-      'Beauty',
+  'Home & Garden',
+  'Beauty',
   'Kitchen'
 ];
 
@@ -38,10 +38,24 @@ List<String> electronic = [
   'headphone',
   'mobile cover',
   'keyboard',
-  'earbirds',
+  'earbuds',
   'watch',
   'mouse',
-  'videogame',
+  'videotape',
   'dslr',
   'usb cable',
+];
+
+List<String> beauty = [
+  'hairdryer',
+  'neckless',
+  'earrings',
+  'makeup brush',
+  'face serum',
+  'consiler',
+  'liquid',
+  'beauty7',
+  'beauty8',
+  'beauty9',
+  'beauty10',
 ];
