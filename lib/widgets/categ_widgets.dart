@@ -20,20 +20,11 @@ class SliderBar extends StatelessWidget {
             children: [
               mainCategoryName == 'beauty'
                   ? const Text('')
-                  : const Text(
-                '<<',
-                style: style
-              ),
-              Text(
-                mainCategoryName.toUpperCase(),
-                style: style
-              ),
+                  : const Text('<<', style: style),
+              Text(mainCategoryName.toUpperCase(), style: style),
               mainCategoryName == 'men'
                   ? const Text('')
-                  : const Text(
-                      '>>',
-                      style: style
-                    )
+                  : const Text('>>', style: style)
             ],
           ),
         ),
@@ -42,7 +33,11 @@ class SliderBar extends StatelessWidget {
   }
 }
 
-const style = TextStyle(color: Colors.brown, fontWeight: FontWeight.w900, fontSize: 18, letterSpacing: 10);
+const style = TextStyle(
+    color: Colors.brown,
+    fontWeight: FontWeight.w900,
+    fontSize: 18,
+    letterSpacing: 10);
 
 class SubcategoryModal extends StatelessWidget {
   final String mainCategoryName;
@@ -71,14 +66,18 @@ class SubcategoryModal extends StatelessWidget {
       },
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        SizedBox(
-            // color: Colors.grey.shade400,
-            height: 100,
-            width: 100,
-            child: Image(
-              image: AssetImage(assetName),
-            )),
-        Text(subCategorylabel)
+        CircleAvatar(
+          backgroundColor: Colors.grey[100],
+          radius: 50,
+          child: CircleAvatar(
+            radius: 40,
+            backgroundImage: AssetImage(assetName),
+          ),
+          // height: 100,
+          // width: 100,
+        ),
+        Text(subCategorylabel),
+        const Divider()
       ]),
     );
   }

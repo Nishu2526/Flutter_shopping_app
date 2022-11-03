@@ -2,11 +2,14 @@ List<String> mainCategory = [
   'Men',
   'Women',
   'Kids',
-  'Accessories',
-  'Electronics',
   'Home & Garden',
-  'Beauty',
+  'Electronics',
+  'Accessories',
   'Kitchen'
+  'Phone',
+  'Beauty',
+  'Others',
+
 ];
 
 List<String> men = [
@@ -58,4 +61,16 @@ List<String> beauty = [
   'beauty8',
   'beauty9',
   'beauty10',
+];
+
+List<String> phone = [
+  'realme',
+  'POCO',
+  'Apple',
+  'Samsung',
+  'vivo',
+  'Xiaomi',
+  'OPPO',
+  'Infinix',
+  'Others'
 ];

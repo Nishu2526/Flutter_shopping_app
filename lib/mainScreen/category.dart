@@ -1,6 +1,7 @@
 import 'package:bottomnavigation/categories/beauty_categ.dart';
 import 'package:bottomnavigation/categories/elecronics_categ.dart';
 import 'package:bottomnavigation/categories/men_categ.dart';
+import 'package:bottomnavigation/categories/phone_categ.dart';
 import 'package:bottomnavigation/categories/women_categ.dart';
 import 'package:bottomnavigation/widgets/fake_search.dart';
 import 'package:flutter/material.dart';
@@ -18,12 +19,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
   List<ItemsData> items = [
     ItemsData(label: 'Men'),
     ItemsData(label: 'Women'),
-    // ItemsData(label: 'Kids'),
-    // ItemsData(label: 'Home & Garden'),
+    ItemsData(label: 'Kids'),
+    ItemsData(label: 'Home & Garden'),
     ItemsData(label: 'Electronics'),
-    // ItemsData(label: ' Accessories'),
+    ItemsData(label: ' Accessories'),
+    ItemsData(label: 'Kitchen'),
+    ItemsData(label: 'phone'),
     ItemsData(label: 'Beauty'),
-    // ItemsData(label: 'Kitchen'),
+
   ];
 
   final PageController _pageController = PageController();
@@ -79,13 +82,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
             return GestureDetector(
               onTap: () {
                 _pageController.animateToPage(index,
-                    duration: const Duration(milliseconds: 100),
+                    duration: const Duration(milliseconds: 200),
                     curve: Curves.bounceIn);
-                // // Here for keyword used for same color of  unselected Container
+                // Here for keyword used for same color of  unselected Container
                 // for (var element in items){
                 //   element.isSelected = false;
                 // }
-                // // Here setState  used for different color of  selected Container
+                // Here setState  used for different color of  selected Container
                 // setState(() {
                 //   items[index].isSelected = true;
                 // });
@@ -123,28 +126,29 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: const [
           MenCategory(),
           WomenCategory(),
-          // Center(
-          //     child: Text(
-          //   'Kids Category',
-          //   style: TextStyle(fontSize: 30),
-          // )),
-          // Center(
-          //     child: Text(
-          //   'Home & Garden',
-          //   style: TextStyle(fontSize: 30),
-          // )),
-           ElectronicCategory(),
-          // Center(
-          //     child: Text(
-          //   'Accessories',
-          //   style: TextStyle(fontSize: 30),
-          // )),
+          Center(
+              child: Text(
+            'Kids Category',
+            style: TextStyle(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            'Home & Garden',
+            style: TextStyle(fontSize: 30),
+          )),
+          ElectronicCategory(),
+          Center(
+              child: Text(
+                'Accessories',
+                style: TextStyle(fontSize: 30),
+              )),
+          Center(
+              child: Text(
+                'Kitchen',
+                style: TextStyle(fontSize: 30),
+              )),
+          PhoneCategory(),
           BeautyCategory(),
-          // Center(
-          //     child: Text(
-          //   'Kitchen',
-          //   style: TextStyle(fontSize: 30),
-          // )),
         ],
       )),
     );
