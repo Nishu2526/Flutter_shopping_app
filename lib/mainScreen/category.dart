@@ -126,27 +126,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: const [
           MenCategory(),
           WomenCategory(),
-          Center(
-              child: Text(
-            'Kids Category',
-            style: TextStyle(fontSize: 30),
-          )),
-          Center(
-              child: Text(
-            'Home & Garden',
-            style: TextStyle(fontSize: 30),
-          )),
+          Center(child: Text('Kids Category')),
+          Center(child: Text('Home & Garden')),
           ElectronicCategory(),
-          Center(
-              child: Text(
-                'Accessories',
-                style: TextStyle(fontSize: 30),
-              )),
-          Center(
-              child: Text(
-                'Kitchen',
-                style: TextStyle(fontSize: 30),
-              )),
+          Center(child: Text('Accessories')),
+          Center(child: Text('Kitchen')),
           PhoneCategory(),
           BeautyCategory(),
         ],

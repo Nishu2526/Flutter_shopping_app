@@ -72,5 +72,4 @@ List<String> phone = [
   'Xiaomi',
   'OPPO',
   'Infinix',
-  'Others'
 ];
