@@ -36,6 +36,19 @@ List<String> women = [
   'Shorts'
 ];
 
+List<String> kids = [
+  'boys fashion',
+  'girls fashion',
+  'frocks',
+  'clothing set',
+  'lehenga choli',
+  'kurta set',
+  'shorts and capris',
+  'tops & t-shirts',
+  'party wear',
+  'winter wear'
+];
+
 List<String> electronic = [
   'laptop',
   'headphone',

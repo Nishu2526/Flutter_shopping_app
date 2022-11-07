@@ -66,18 +66,18 @@ class SubcategoryModal extends StatelessWidget {
       },
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        CircleAvatar(
-          backgroundColor: Colors.grey[100],
-          radius: 50,
-          child: CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage(assetName),
-          ),
-          // height: 100,
-          // width: 100,
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.brown[100],
+            borderRadius: BorderRadius.circular(15) ),
+          height: 110,
+          width: 110,
+          child: Image(image: AssetImage(assetName)),
         ),
-        Text(subCategorylabel),
-        const Divider()
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(subCategorylabel),
+        ),
       ]),
     );
   }
@@ -92,9 +92,26 @@ class CategoryHeaderLevel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 30),
       child: Text(
         headerLabel,
+        style: const TextStyle(
+            fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: 2),
+      ),
+    );
+  }
+}
+
+class SubHeaderCategory extends StatelessWidget {
+  final String subHeaderLabel;
+  const SubHeaderCategory({Key? key, required this.subHeaderLabel}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, top: 5, bottom: 10),
+      child: Text(
+        subHeaderLabel,
         style: const TextStyle(
             fontSize: 25, fontWeight: FontWeight.bold, letterSpacing: 2),
       ),

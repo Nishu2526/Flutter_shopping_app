@@ -1,5 +1,6 @@
 import 'package:bottomnavigation/categories/beauty_categ.dart';
 import 'package:bottomnavigation/categories/elecronics_categ.dart';
+import 'package:bottomnavigation/categories/kids_categ.dart';
 import 'package:bottomnavigation/categories/men_categ.dart';
 import 'package:bottomnavigation/categories/phone_categ.dart';
 import 'package:bottomnavigation/categories/women_categ.dart';
@@ -126,7 +127,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: const [
           MenCategory(),
           WomenCategory(),
-          Center(child: Text('Kids Category')),
+          KidsCategory(),
           Center(child: Text('Home & Garden')),
           ElectronicCategory(),
           Center(child: Text('Accessories')),

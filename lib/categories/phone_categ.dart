@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../utilies/cate_list.dart';
 
-
-
 class PhoneCategory extends StatelessWidget {
   const PhoneCategory({Key? key}) : super(key: key);
 
@@ -25,8 +23,19 @@ class PhoneCategory extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CategoryHeaderLevel(
-                    headerLabel: 'Phone',
+                  Row(
+                    children: const [
+                      CategoryHeaderLevel(
+                        headerLabel: 'Phone',
+                      ),
+                      Expanded(
+                          child: Padding(
+                        padding: EdgeInsets.only(left: 5, right: 20),
+                        child: Divider(
+                          thickness: 2,
+                        ),
+                      ))
+                    ],
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.68,
@@ -62,5 +71,3 @@ class PhoneCategory extends StatelessWidget {
     );
   }
 }
-
-

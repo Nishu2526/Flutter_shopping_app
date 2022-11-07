@@ -20,14 +20,24 @@ class MenCategory extends StatelessWidget {
             child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.8,
               width: MediaQuery.of(context).size.width * 0.75,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ListView(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+
                 children: [
-                  const CategoryHeaderLevel(
-                    headerLabel: 'Men',
+                  Row(
+                    children: const[
+                       CategoryHeaderLevel(
+                       headerLabel: 'Men',
+                          ),
+                       Expanded(child: Padding(
+                         padding: EdgeInsets.only(left: 5, right: 20),
+                         child: Divider(thickness: 2,),
+                       ))
+                    ],
                   ),
+                  const SubHeaderCategory(subHeaderLabel: 'Men Ethics'),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.68,
+                     height: MediaQuery.of(context).size.height * 0.68,
                     child: GridView.count(
                         crossAxisCount: 3,
                         mainAxisSpacing: 40,

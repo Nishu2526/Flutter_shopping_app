@@ -20,8 +20,21 @@ class WomenCategory extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CategoryHeaderLevel(
-                    headerLabel: 'Women',
+                  SizedBox(
+                    child: Row(
+                      children: const [
+                        CategoryHeaderLevel(
+                          headerLabel: 'Women',
+                        ),
+                        Expanded(
+                            child: Padding(
+                          padding: EdgeInsets.only(left: 5, right: 20),
+                          child: Divider(
+                            thickness: 2,
+                          ),
+                        ))
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.68,
@@ -57,4 +70,3 @@ class WomenCategory extends StatelessWidget {
     );
   }
 }
-

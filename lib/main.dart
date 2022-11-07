@@ -1,14 +1,16 @@
+
 import 'package:flutter/material.dart';
+
 import 'mainScreen/customer_home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( ABC());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ABC extends StatelessWidget {
 
-  // This widget is the root of your application.
+  const ABC({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,9 +19,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-
-      home: const CustomerHomePage(title: 'Bmartoxx App Store'),
+      home: const CustomerHomePage(title: 'Shopping App',),
     );
   }
 }
+
 

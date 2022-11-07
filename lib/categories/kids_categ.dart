@@ -1,10 +1,11 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:bottomnavigation/widgets/categ_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:bottomnavigation/utilies/cate_list.dart';
 
-
-class ElectronicCategory extends StatelessWidget {
-  const ElectronicCategory({Key? key}) : super(key: key);
+class KidsCategory extends StatelessWidget {
+  const KidsCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,29 +22,32 @@ class ElectronicCategory extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Row(
-                     children: const[
-                       CategoryHeaderLevel(
-                        headerLabel: 'Electronics',
+                  Row(
+                    children: const [
+                      CategoryHeaderLevel(
+                        headerLabel: 'Kids',
+                      ),
+                      Expanded(
+                          child: Padding(
+                        padding: EdgeInsets.only(left: 5, right: 20),
+                        child: Divider(
+                          thickness: 2,
+                        ),
+                      ))
+                    ],
                   ),
-                       Expanded(child: Padding(
-                         padding: EdgeInsets.only(left: 5, right: 20),
-                         child: Divider(thickness: 2,),
-                       ))
-                     ],
-                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.68,
                     child: GridView.count(
                         crossAxisCount: 3,
                         mainAxisSpacing: 40,
                         // crossAxisSpacing: 20,
-                        children: List.generate(electronic.length, (index) {
+                        children: List.generate(kids.length, (index) {
                           return SubcategoryModal(
-                            mainCategoryName: 'electronic',
-                            subCategoryName: electronic[index],
-                            assetName: 'images/electronic/electronic$index.jpg',
-                            subCategorylabel: electronic[index],
+                            mainCategoryName: 'kids',
+                            subCategoryName: kids[index],
+                            assetName: 'images/kids/kids$index.jpg',
+                            subCategorylabel: kids[index],
                           );
                         })),
                   ),
@@ -58,7 +62,7 @@ class ElectronicCategory extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.8,
                 width: MediaQuery.of(context).size.width * 0.05,
                 child: const SliderBar(
-                  mainCategoryName: 'electronic',
+                  mainCategoryName: 'kids',
                 ),
               ))
         ],
@@ -66,4 +70,3 @@ class ElectronicCategory extends StatelessWidget {
     );
   }
 }
-

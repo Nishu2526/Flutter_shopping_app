@@ -1,5 +1,8 @@
+import 'package:bottomnavigation/mainScreen/cart.dart';
 import 'package:bottomnavigation/mainScreen/category.dart';
 import 'package:bottomnavigation/mainScreen/home.dart';
+import 'package:bottomnavigation/mainScreen/profile_screen.dart';
+import 'package:bottomnavigation/mainScreen/store_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,14 +21,14 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   final List<Widget> _tabs = const [
     HomeScreen(),
     CategoryScreen(),
-    Center(child: Text('My Order Screen')),
-    Center(child: Text('My Cart Screen')),
-    Center(child: Text('Account Screen')),
+    StoreScreenPage(),
+    CartScreenPage(),
+    ProfileScreenPage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _tabs[_selectedIndex],
+       body: _tabs[_selectedIndex],
       //Bottom NavigationBar
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
@@ -41,7 +44,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             icon: Icon(Icons.home), label: 'Home', ),
           BottomNavigationBarItem(
               icon: Icon(Icons.category_outlined), label: 'Categories'),
-          BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'My Order'),
+          BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Stores'),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart_outlined), label: 'My Cart'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),

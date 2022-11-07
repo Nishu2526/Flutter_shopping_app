@@ -1,0 +1,110 @@
+import 'package:bottomnavigation/mainScreen/customer_home_page.dart';
+import 'package:bottomnavigation/widgets/appbar_widgets.dart';
+import 'package:flutter/material.dart';
+
+class CartScreenPage extends StatefulWidget {
+  const CartScreenPage({Key? key}) : super(key: key);
+
+  @override
+  State<CartScreenPage> createState() => _CartScreenPageState();
+}
+
+class _CartScreenPageState extends State<CartScreenPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+        title: const AppbarTitle(
+          title: 'My Cart',
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.delete_forever,
+                color: Colors.black,
+              ))
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Your cart is empty !',
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Material(
+              color: Colors.lightBlue,
+              borderRadius: BorderRadius.circular(25),
+              child: MaterialButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const  CustomerHomePage(title: '',)));
+                },
+                minWidth: MediaQuery.of(context).size.width * 0.6,
+                child: const Text(
+                  'Continue Shopping',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+      bottomSheet: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: const [
+                Text(
+                  'Total: \$ ',
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  '00:00',
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width * .45,
+              decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(25)),
+              child: MaterialButton(
+                onPressed: () {},
+                minWidth: MediaQuery.of(context).size.width * 0.6,
+                child: const Text(
+                  'CHECK OUT',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
