@@ -67,6 +67,8 @@ flutter:
     - images/beauty/
     - images/phone/
     - images/kids/
+    - images/logo/
+    - images/profile/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

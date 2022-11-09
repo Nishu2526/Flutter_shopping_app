@@ -98,7 +98,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   color: items[index].isSelected == true
                       ? Colors.white
                       : Colors.grey.shade300,
-                  height: 100,
+                  height: 80,
                   child: Center(child: Text(items[index].label))),
             );
           }),

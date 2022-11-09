@@ -8,7 +8,7 @@ class SliderBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 28),
       child: Container(
         decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.5),
@@ -35,8 +35,8 @@ class SliderBar extends StatelessWidget {
 
 const style = TextStyle(
     color: Colors.brown,
-    fontWeight: FontWeight.w900,
-    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    fontSize: 16,
     letterSpacing: 10);
 
 class SubcategoryModal extends StatelessWidget {
@@ -65,13 +65,15 @@ class SubcategoryModal extends StatelessWidget {
                     )));
       },
       child:
-          Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.brown[100],
-            borderRadius: BorderRadius.circular(15) ),
-          height: 110,
-          width: 110,
+              color: Colors.brown[100],
+              borderRadius: BorderRadius.circular(25)),
+          height: 100,
+          width: 100,
           child: Image(image: AssetImage(assetName)),
         ),
         Padding(
@@ -92,7 +94,7 @@ class CategoryHeaderLevel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: Text(
         headerLabel,
         style: const TextStyle(
@@ -104,7 +106,8 @@ class CategoryHeaderLevel extends StatelessWidget {
 
 class SubHeaderCategory extends StatelessWidget {
   final String subHeaderLabel;
-  const SubHeaderCategory({Key? key, required this.subHeaderLabel}) : super(key: key);
+  const SubHeaderCategory({Key? key, required this.subHeaderLabel})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +116,7 @@ class SubHeaderCategory extends StatelessWidget {
       child: Text(
         subHeaderLabel,
         style: const TextStyle(
-            fontSize: 25, fontWeight: FontWeight.bold, letterSpacing: 2),
+            fontSize: 18, fontWeight: FontWeight.normal, letterSpacing: 2),
       ),
     );
   }

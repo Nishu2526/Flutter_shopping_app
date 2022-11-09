@@ -36,10 +36,10 @@ class _HomeScreenState extends State<HomeScreen>
 
         // Here we use Search Button Class
         title: const FakeSearch(),
-        toolbarHeight: 80,
+        toolbarHeight: 60,
         bottom: TabBar(
           isScrollable: true,
-          indicatorWeight: 8,
+          indicatorWeight: 2,
           indicatorColor: Colors.yellow,
           controller: _tabController,
           tabs: _myTabs,
@@ -90,8 +90,8 @@ class RepetedTab extends StatelessWidget {
         label,
         style: const TextStyle(
             color: Colors.blueGrey,
-            fontWeight: FontWeight.w900,
-            fontSize: 22,
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
             letterSpacing: 2),
       ),
     );

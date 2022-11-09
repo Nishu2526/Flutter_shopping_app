@@ -35,6 +35,6 @@ class AppbarTitle extends StatelessWidget {
               fontWeight: FontWeight.w600,
               letterSpacing: 2.0),
         );
-
   }
 }
+
