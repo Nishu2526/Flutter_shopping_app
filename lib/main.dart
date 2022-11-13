@@ -28,8 +28,9 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home:  const WelcomeScreen(),
+      // CustomerHomePage(title: ''),
       //  SupplierHomeScreen(title: 'Supplier'),
-        // CustomerHomePage(title: '')
+
     );
   }
 }

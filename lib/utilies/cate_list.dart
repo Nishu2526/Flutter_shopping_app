@@ -56,17 +56,13 @@ List<String> electronic = [
   'keyboard',
   'earbuds',
   'watch',
-  'mouse',
+  // 'mouse',
   'videotape',
   'dslr',
   'usb cable',
 ];
 
 List<String> beauty = [
-  'hairdryer',
-  'neckless',
-  'earrings',
-  'makeup brush',
   'face serum',
   'consiler',
   'liquid',

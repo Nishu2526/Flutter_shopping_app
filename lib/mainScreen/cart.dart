@@ -50,7 +50,9 @@ class _CartScreenPageState extends State<CartScreenPage> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const  CustomerHomePage(title: '',)));
+                          builder: (context) => const CustomerHomePage(
+                                title: '',
+                              )));
                 },
                 minWidth: MediaQuery.of(context).size.width * 0.6,
                 child: const Text(
@@ -85,24 +87,40 @@ class _CartScreenPageState extends State<CartScreenPage> {
                 ),
               ],
             ),
-            Container(
-              height: 40,
-              width: MediaQuery.of(context).size.width * .45,
-              decoration: BoxDecoration(
-                  color: Colors.yellow,
-                  borderRadius: BorderRadius.circular(25)),
-              child: MaterialButton(
-                onPressed: () {},
-                minWidth: MediaQuery.of(context).size.width * 0.6,
-                child: const Text(
-                  'CHECK OUT',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            )
+            YellowButton(label: 'CHECK OUT', onPressed: (){}, width: MediaQuery.of(context).size.width *0.45)
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class YellowButton extends StatelessWidget {
+  final String label;
+  final Function() onPressed;
+  final double width;
+  const YellowButton(
+      {Key? key,
+      required this.label,
+      required this.onPressed,
+      required this.width})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      width: width,
+      decoration: BoxDecoration(
+          color: Colors.yellow, borderRadius: BorderRadius.circular(25)),
+      child: MaterialButton(
+        onPressed: onPressed,
+        child:  Text(
+          label,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );
