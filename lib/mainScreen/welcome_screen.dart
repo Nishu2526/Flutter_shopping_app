@@ -1,8 +1,9 @@
 import 'dart:math';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:bottomnavigation/mainScreen/cart.dart';
 import 'package:bottomnavigation/widgets/google_face.dart';
 import 'package:flutter/material.dart';
+
+import 'my_cart.dart';
 
 const textColor = [
   Colors.yellow,
@@ -127,7 +128,10 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                                 AnimatedLogo(controller: _controller),
                                 YellowButton(
                                     label: 'log In',
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushReplacementNamed(
+                                          context, '/supplier_home');
+                                    },
                                     width: MediaQuery.of(context).size.width *
                                         0.25),
                                 Padding(
@@ -162,13 +166,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               padding: const EdgeInsets.only(left: 10),
                               child: YellowButton(
                                   label: 'log In',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(
+                                        context, '/customer_home');
+                                  },
                                   width:
                                       MediaQuery.of(context).size.width * 0.25),
                             ),
                             YellowButton(
                                 label: 'Sign Up',
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(
+                                      context, '/customer_signup');
+                                },
                                 width:
                                     MediaQuery.of(context).size.width * 0.25),
                             AnimatedLogo(controller: _controller),

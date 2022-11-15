@@ -1,9 +1,11 @@
-import 'package:bottomnavigation/mainScreen/cart.dart';
+
 import 'package:bottomnavigation/mainScreen/category.dart';
 import 'package:bottomnavigation/mainScreen/home.dart';
 import 'package:bottomnavigation/mainScreen/profile_screen.dart';
 import 'package:bottomnavigation/mainScreen/store_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'my_cart.dart';
 
 
 

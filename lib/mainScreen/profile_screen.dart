@@ -1,3 +1,7 @@
+import 'package:bottomnavigation/mainScreen/my_cart.dart';
+import 'package:bottomnavigation/customers_componants/cus_orders.dart';
+import 'package:bottomnavigation/customers_componants/cus_wishlist.dart';
+import 'package:bottomnavigation/widgets/appbar_widgets.dart';
 import 'package:bottomnavigation/widgets/profile_repated_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,15 +20,13 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: Stack(
-        children: [
-          Container(
+      body: Stack(children: [
+        Container(
             height: 200,
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Colors.yellow, Colors.brown]))
-          ),
-          CustomScrollView(
+            decoration: const BoxDecoration(
+                gradient:
+                    LinearGradient(colors: [Colors.yellow, Colors.brown]))),
+        CustomScrollView(
           slivers: [
             SliverAppBar(
               systemOverlayStyle: const SystemUiOverlayStyle(
@@ -47,7 +49,6 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                     child: const Text('Account',
                         style: TextStyle(color: Colors.black)),
                   ),
-
                   background: Container(
                     decoration: const BoxDecoration(
                         gradient: LinearGradient(
@@ -95,7 +96,15 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                                   topLeft: Radius.circular(30),
                                   bottomLeft: Radius.circular(30))),
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CartScreenPage(
+                                            back: AppbarBackButton(),
+                                          )));
+                            },
                             child: SizedBox(
                                 height: 40,
                                 width: MediaQuery.of(context).size.width * 0.2,
@@ -112,7 +121,13 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                             color: Colors.yellow,
                           ),
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CutomerOrders()));
+                            },
                             child: SizedBox(
                                 height: 40,
                                 width: MediaQuery.of(context).size.width * 0.2,
@@ -130,7 +145,13 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                                   topRight: Radius.circular(30),
                                   bottomRight: Radius.circular(30))),
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CustomerWishlist()));
+                            },
                             child: SizedBox(
                                 height: 40,
                                 width: MediaQuery.of(context).size.width * 0.2,
@@ -148,92 +169,95 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                     color: Colors.grey[300],
                     child: Column(
                       children: [
-                         const SizedBox(
+                        const SizedBox(
                           height: 150,
                           child: Image(
-                            image: AssetImage('images/logo/logo0.jpg'),
+                            image: AssetImage('images/inapp/logo1.png'),
                           ),
                         ),
-
-                    const ProfileHeaderLabel(headerLabel: '  Account Info  '),
-                    Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      child: Container(
-                        height: 260,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(25)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: const [
-                            ProfileRepeatedListTile(
-                              title: 'Email Address',
-                              icons: Icons.email_rounded,
-                              subtitle: 'example@gmail.com',
+                        const ProfileHeaderLabel(
+                            headerLabel: '  Account Info  '),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: Container(
+                            height: 260,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: const [
+                                ProfileRepeatedListTile(
+                                  title: 'Email Address',
+                                  icons: Icons.email_rounded,
+                                  subtitle: 'example@gmail.com',
+                                ),
+                                YellowDiver(),
+                                ProfileRepeatedListTile(
+                                  title: 'Phone No',
+                                  icons: Icons.phone,
+                                  subtitle: '91+----------',
+                                ),
+                                YellowDiver(),
+                                ProfileRepeatedListTile(
+                                  title: 'Account',
+                                  icons: Icons.location_pin,
+                                  subtitle:
+                                      'example: house no, nearest location',
+                                ),
+                              ],
                             ),
-                            YellowDiver(),
-                            ProfileRepeatedListTile(
-                              title: 'Phone No',
-                              icons: Icons.phone,
-                              subtitle: '91+----------',
-                            ),
-                            YellowDiver(),
-                            ProfileRepeatedListTile(
-                              title: 'Account',
-                              icons: Icons.location_pin,
-                              subtitle: 'example: house no, nearest location',
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
-                    const ProfileHeaderLabel(headerLabel: '  Account Setting  '),
-                    Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      child: Container(
-                        height: 260,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(25)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            ProfileRepeatedListTile(
-                                title: 'Edit Profile',
-                                icons: Icons.edit,
-                                subtitle: '',
-                                onPressed: () {}),
-                            const YellowDiver(),
-                            ProfileRepeatedListTile(
-                              title: 'Change Password',
-                              icons: Icons.lock,
-                              subtitle: '',
-                              onPressed: () {},
+                        const ProfileHeaderLabel(
+                            headerLabel: '  Account Setting  '),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: Container(
+                            height: 260,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                ProfileRepeatedListTile(
+                                    title: 'Edit Profile',
+                                    icons: Icons.edit,
+                                    subtitle: '',
+                                    onPressed: () {}),
+                                const YellowDiver(),
+                                ProfileRepeatedListTile(
+                                  title: 'Change Password',
+                                  icons: Icons.lock,
+                                  subtitle: '',
+                                  onPressed: () {},
+                                ),
+                                const YellowDiver(),
+                                ProfileRepeatedListTile(
+                                  title: 'LogOut',
+                                  icons: Icons.logout,
+                                  subtitle: '',
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(
+                                        context, '?welcome_screen');
+                                  },
+                                )
+                              ],
                             ),
-                            const YellowDiver(),
-                            ProfileRepeatedListTile(
-                              title: 'LogOut',
-                              icons: Icons.logout,
-                              subtitle: '',
-                              onPressed: () {},
-                            )
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                ],
-              ),
                   ),
-
                 ],
               ),
             )
           ],
         ),
-        ]
-      ),
+      ]),
     );
   }
 }
